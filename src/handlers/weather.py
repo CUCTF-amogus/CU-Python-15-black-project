@@ -33,6 +33,7 @@ async def input_city(message: types.Message, state: FSMContext):
     if len(cities) == 1:
         await message.answer(config.messages.weather_end_city_message)
         await state.set_state(InputCityState.city)
+        await state.update_data(insert_index=1)
         return
     
     await aio.clear_state_with_save_data(state)

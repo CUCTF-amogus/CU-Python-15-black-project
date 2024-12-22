@@ -33,7 +33,7 @@ async def get_forecast(
 
     text = ""
 
-    for city in [cities[0]]:
+    for city in cities:
         try:
             forecast = weatherAPI.get_weather(city, days_amount=callback_data.amount)
             if not forecast:

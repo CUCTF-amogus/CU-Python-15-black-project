@@ -28,6 +28,7 @@ class Messages:
     weather_city_added_message: str
     weather_current_roadmap_message: str
     weather_get_forecast_message: str
+    weather_forecast_days_message: str
 
 
 @dataclass
@@ -51,6 +52,7 @@ def load_config() -> Config:
             weather_city_added_message=messages.weather_city_added_message,
             weather_current_roadmap_message=messages.weather_current_roadmap_message,
             weather_get_forecast_message=messages.weather_get_forecast_message,
+            weather_forecast_days_message=messages.weather_forecast_days_message,
         ),
     )
 

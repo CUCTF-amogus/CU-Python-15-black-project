@@ -2,7 +2,7 @@ from aiogram import Router, types
 from aiogram.fsm.context import FSMContext
 
 from src.keyboards.cities import AddCityCallbackData
-from src.states import InputCityState
+from src.states.weather_states import InputCityState
 
 
 router = Router()
@@ -16,5 +16,5 @@ async def add_city(
 ):
     await callback.message.edit_reply_markup(reply_markup=None)
     await state.set_state(InputCityState.city)
-    await state.update_data(insert_after=callback_data.after_index)
+    await state.update_data(insert_index=callback_data.index)
     await callback.message.answer("Введите город:")

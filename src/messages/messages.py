@@ -9,3 +9,9 @@ help_message = """Доступные команды:
 /help - Показывает все команды
 /weather - Выводит прогноз погоды
 """
+
+weather_start_city_message = """Введите город отправки: """
+weather_end_city_message = """Введите город прибытия: """
+weather_city_added_message = """Город {} успешно добавлен"""
+weather_current_roadmap_message = """Текущий маршрут: """
+weather_get_forecast_message = """Получить прогноз погоды"""

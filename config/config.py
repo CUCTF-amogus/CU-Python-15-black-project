@@ -23,6 +23,11 @@ class Bot:
 class Messages:
     start_message: str
     help_message: str
+    weather_start_city_message: str
+    weather_end_city_message: str
+    weather_city_added_message: str
+    weather_current_roadmap_message: str
+    weather_get_forecast_message: str
 
 
 @dataclass
@@ -41,6 +46,11 @@ def load_config() -> Config:
         messages=Messages(
             start_message=messages.start_message,
             help_message=messages.help_message,
+            weather_start_city_message=messages.weather_start_city_message,
+            weather_end_city_message=messages.weather_end_city_message,
+            weather_city_added_message=messages.weather_city_added_message,
+            weather_current_roadmap_message=messages.weather_current_roadmap_message,
+            weather_get_forecast_message=messages.weather_get_forecast_message,
         ),
     )
 

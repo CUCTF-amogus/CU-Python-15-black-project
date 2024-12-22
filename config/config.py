@@ -17,6 +17,14 @@ def init_logging():
 @dataclass
 class Bot:
     token: str
+    cache_enable: bool
+
+
+@dataclass
+class Api:
+    api_key: str
+    location_url: str
+    weather_url: str
 
 
 @dataclass
@@ -29,11 +37,13 @@ class Messages:
     weather_current_roadmap_message: str
     weather_get_forecast_message: str
     weather_forecast_days_message: str
+    weather_requesting_data_message: str
 
 
 @dataclass
 class Config:
     bot: Bot
+    api: Api
     messages: Messages
 
 
@@ -43,6 +53,12 @@ def load_config() -> Config:
     return Config(
         bot=Bot(
             token=getenv("AIOGRAM_TOKEN"),
+            cache_enable=False,
+        ),
+        api=Api(
+            api_key=getenv("API_TOKEN"),
+            location_url=getenv("LOCATION_URL"),
+            weather_url=getenv("WEATHER_URL"),
         ),
         messages=Messages(
             start_message=messages.start_message,
@@ -53,6 +69,7 @@ def load_config() -> Config:
             weather_current_roadmap_message=messages.weather_current_roadmap_message,
             weather_get_forecast_message=messages.weather_get_forecast_message,
             weather_forecast_days_message=messages.weather_forecast_days_message,
+            weather_requesting_data_message=messages.weather_requesting_data_message,
         ),
     )
 

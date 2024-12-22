@@ -17,7 +17,6 @@ async def weather(message: types.Message, state: FSMContext):
     await message.answer(config.messages.weather_start_city_message)
     await state.update_data(cities=[], insert_index=0)
     await state.set_state(InputCityState.city)
-    print(await state.get_state())
 
 
 @router.message(InputCityState.city, F.text)
@@ -29,9 +28,8 @@ async def input_city(message: types.Message, state: FSMContext):
     city = message.text
 
     cities.insert(insert_index, city)
-    print(cities)
     await state.update_data(cities=cities)
-    print(len(cities))
+
     if len(cities) == 1:
         await message.answer(config.messages.weather_end_city_message)
         await state.set_state(InputCityState.city)

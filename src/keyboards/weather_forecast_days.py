@@ -1,7 +1,5 @@
 from aiogram.utils.keyboard import CallbackData, InlineKeyboardMarkup, InlineKeyboardButton
 
-from src.messages import messages
-
 
 class ForecastDaysCallbackData(CallbackData, prefix="forecast_days"):
     amount: int

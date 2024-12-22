@@ -1,12 +1,10 @@
-from aiogram import Router, types, F
-from aiogram.filters import Command
+from aiogram import Router, types
 from aiogram.fsm.context import FSMContext
 
 from config.config import config
 from src.keyboards.cities import GetWeatherCallbackData
 from src.keyboards.weather_forecast_days import forecast_days_keyboard
 from src.services import aio
-from src.states.weather_states import InputCityState
 
 
 router = Router()
